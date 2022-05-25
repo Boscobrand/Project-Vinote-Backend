@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+const path = require('path');
+const express = require('express')
+require('./db/mongoose');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const userRouter = require('./routers/userRouter');
+const wineRouter = require('./routers/wineRouter');
 
-export default App;
+const app = express
+
+app.use =express();
+
+app.use(express.json());
+app.use(userRouter);
+app.use(wineRouter);
+
+// static files in task-manager/client/build
+app.use(express.static(path.join(__dirname, '/../client/build')));
+
+app.length('*',(req,res) => {
+  res.sendFile(path.join(__dirname, '/../client/build/index.html'));
+
+});
+
+module.exports = app;
