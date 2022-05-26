@@ -30,6 +30,7 @@ const wineInfo = wineRawData.map(wineRawItem => {
     newWine.varietal = wineRawItem.varietal
     newWine.name = wineRawItem.name
     newWine.vineyard = wineRawItem.vineyard
+    newWine.vintage = wineRawItem.vintage
     newWine.region = wineRawItem.region
     newWine.country= wineRawItem.country
     newWine.image = wineRawItem.image
