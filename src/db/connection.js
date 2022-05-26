@@ -2,13 +2,14 @@ const mongoose = require("mongoose");
 
 mongoose.Promise = Promise;
 
-// const mongoURI = "mongodb://localhost/trail-api";
-let mongoURI = "";
+
+let mongoURI = "mongodb+srv://Boscobrand:wvtPo21EFXt0VgbK@user.taqv4.mongodb.net/User?retryWrites=true&w=majority";
 
 if (process.env.NODE_ENV === "production") {
     mongoURI = process.env.DB_URL;
-  } else {
-    mongoURI = "mongodb://localhost/user-api";
+  } 
+  else {
+    mongoURI = "mongodb://localhost:4000";
   }
 
 mongoose
