@@ -22,10 +22,10 @@ const wineSchema = new mongoose.Schema(
             // enum: ['Red - Cabernet Sauvignon', 'Red - Pinot Noir', 'Red - Merlot', 'Red - Malbec', 'Red- Zinfandel', 'Red - Bordeaux', 'Red - Rioja', 'Red - Syrah', 'Red - Tempranillo', 'White - Chardonnay', 'White - Sauvignon Blanc', 'White - Pinot Gris', 'White - Pinot Grigio', 'White - Riesling', 'White - Gewurtztraimer', 'White - Chenin Blanc', 'Rosé', 'Dessert - Port', 'Dessert - Sauternes','Dessert - Icewine','Dessert - Sherry', 'Sparkling - Champagne', 'Sparkling - Traditional', 'Sparkling - Moscato', 'Sparkling - Prosecco', 'Sparkling - Cava', 'Sparkling - Cremant'],
         },
         vineyard: {
-            type: String
+            type: String,
         },
         vintage: {
-            type: Number
+            type: String,
         },
         country: {
             type: String,            
