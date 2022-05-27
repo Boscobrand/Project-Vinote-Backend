@@ -5,14 +5,14 @@ const db = mongoose.connection;
 mongoose.Promise = Promise;
 
 
-let mongoURI = "";
+let mongoURI = process.env.MONGODB_URI;
 
-if (process.env.NODE_ENV === "production") {
-    mongoURI = process.env.MONGODB_URI;
-  } 
-  else {
-    mongoURI = "mongodb://localhost:4000";
-  }
+// if (process.env.NODE_ENV === "production") {
+//     mongoURI = process.env.MONGODB_URI;
+//   } 
+//   else {
+//     mongoURI = "mongodb://localhost:4000";
+//   }
 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true },{ useUnifiedTopology: true })
