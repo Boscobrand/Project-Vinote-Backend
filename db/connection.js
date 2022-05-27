@@ -8,7 +8,7 @@ mongoose.Promise = Promise;
 let mongoURI = "";
 
 if (process.env.NODE_ENV === "production") {
-    mongoURI = process.env.DB_URL;
+    mongoURI = process.env.MONGODB_URI;
   } 
   else {
     mongoURI = "mongodb://localhost:4000";
