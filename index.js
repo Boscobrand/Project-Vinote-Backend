@@ -1,7 +1,16 @@
+require('dotenv').config();
 const express = require("express");
-// const dotenv = require("dotenv").config()
 // const mongoose = require('mongoose')
 const cors = require('cors');
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  methods: ["GET", "POST"],
+  allowedHeaders: ["*"],
+  credentials: true,  
+  optionSuccessStatus: 200,
+}
+
 const app = express();
 
 
@@ -9,7 +18,8 @@ app.use(require("./routes/api-route.js"));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('assets'))
-app.use(cors());
+app.use(cors(corsOptions));
+
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -27,7 +37,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 5001, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
