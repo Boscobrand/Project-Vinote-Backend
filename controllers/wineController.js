@@ -16,7 +16,8 @@ router.get('/', (req, res, next) => {
 // CREATE
 // POST
 router.post('/', (req, res, next) => {
-    Wine.create(req.body).then((wine) => res.status(201).json(wine)).catch(next);
+    Wine.create(req.body).catch(next);
+    // Wine.create(req.body).then((wine) => res.status(200).json(wine)).catch(next);
 });
 
 // UPDATE

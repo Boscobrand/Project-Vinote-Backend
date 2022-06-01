@@ -2,11 +2,13 @@ const mongoose = require("../db/connection");
 
 const wineSchema = new mongoose.Schema(
     {
-        // // owner: {
-        // //     type: mongoose.Schema.types.ObjectId,
-        // //     required: true,
-        // //     ref: 'User'
+        // owner: {
+        //     _id: ObjectId("628ff86ba62ff2c2eba51fb3"),
+        //     // _id: mongoose.Schema.types.ObjectId,
+        //     required: true,
+        //     ref: 'User'
         // },
+
         name: {
             type: String,
         },
