@@ -8,7 +8,6 @@ const { handleValidateId,  handleRecordExists, } = require('../middleware/custom
 // GET 
 router.get('/', (req, res, next) => {
     Wine.find()
-        .populate('name','_id')
         .then((wines)=>res.json(wines))
         .catch(next);
 });

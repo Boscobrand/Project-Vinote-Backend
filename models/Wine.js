@@ -3,9 +3,8 @@ const mongoose = require("../db/connection");
 const wineSchema = new mongoose.Schema(
     {
         // owner: {
-        //     _id: ObjectId("628ff86ba62ff2c2eba51fb3"),
-        //     // _id: mongoose.Schema.types.ObjectId,
-        //     required: true,
+        //     // _id: ObjectId("628ff86ba62ff2c2eba51fb3"),
+        //     _id: mongoose.Schema.Types.ObjectId,
         //     ref: 'User'
         // },
 
@@ -71,7 +70,7 @@ const wineSchema = new mongoose.Schema(
     }
 );
 
-const Wine = mongoose.model('Wine', wineSchema);
+const Wine = mongoose.model('wines', wineSchema);
 
 module.exports = Wine;
 
